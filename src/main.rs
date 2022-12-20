@@ -260,10 +260,10 @@ impl ArrowAdd<UInt32ArrayGPU> for UInt32ArrayGPU {
     type Output = Self;
 
     async fn add(&self, value: &UInt32ArrayGPU) {
-        print_u32_array(&self.gpu_device, &self.data, "via print function");
-        print_u32_array(&self.gpu_device, &value.data, "via print function");
-        println!("via impl function {:?}", self.raw_values().unwrap());
-        println!("via impl function {:?}", value.raw_values().unwrap());
+        print_u32_array(&self.gpu_device, &self.data, "via print function left is ");
+        print_u32_array(&self.gpu_device, &value.data, "via print function right is");
+        println!("via impl function left is {:?}", self.raw_values().unwrap());
+        println!("via impl function right is {:?}", value.raw_values().unwrap());
     }
 }
 
